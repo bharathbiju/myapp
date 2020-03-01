@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/plustwomark.dart';
 import 'package:myapp/tenthmark.dart';
 
-
 class second_page extends StatelessWidget {
   second_page({Key key, this.name, this.dropdownValue, this.section})
       : super(key: key);
@@ -13,7 +12,7 @@ class second_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text("welcome " + name + " of class" + section + "th"),
+        title: Text("welcome " + name),
         centerTitle: true,
         elevation: 0.0,
       ),
@@ -24,52 +23,49 @@ class second_page extends StatelessWidget {
           children: <Widget>[
             new RaisedButton(
               child: new Text('marks'),
-              onPressed:check() ? (){class10(context);} : (){class12(context);},
+              onPressed: check()
+                  ? () {
+                      class10(context);
+                    }
+                  : () {
+                      class12(context);
+                    },
             ),
             new RaisedButton(
               child: new Text('intrest'),
               onPressed: null,
             ),
-            new RaisedButton(
-              child: new Text('result'),
-              onPressed: null
-            ),
+            new RaisedButton(child: new Text('result'), onPressed: null),
           ],
         ),
       ),
     );
   }
-bool check()
-{
-  if (section=='10')
-  return true;
-  else
-  return false;
-}
+
+  bool check() {
+    if (section == '10')
+      return true;
+    else
+      return false;
+  }
 
   void class10(BuildContext context) {
     print('Form submitted');
     {
       Navigator.push(
         context,
-        MaterialPageRoute(
-            builder: (context) =>
-                Ten()),
+        MaterialPageRoute(builder: (context) => Ten()),
       );
     }
   }
 
-    void class12(BuildContext context) {
+  void class12(BuildContext context) {
     print('Form submitted');
     {
       Navigator.push(
         context,
-        MaterialPageRoute(
-            builder: (context) =>
-                Plustwomark()),
+        MaterialPageRoute(builder: (context) => Plustwomark()),
       );
     }
   }
-
-   
 }

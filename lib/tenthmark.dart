@@ -1,115 +1,493 @@
 import 'package:flutter/material.dart';
-
 import 'donutchart.dart';
 
-class Ten extends StatefulWidget{
-  Tenthmark createState()=> Tenthmark();
+class Ten extends StatefulWidget {
+  Tenthmark createState() => Tenthmark();
 }
 
-class Tenthmark extends State<Ten>{
-  var english,math,science;
+class Tenthmark extends State<Ten> {
+  var language1, math, science, language2, social;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("thenth mark"),
+        title: Text("tenth mark"),
       ),
-      body: Form (
-        child:Column ( 
-          crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 16.0),
-          new Text("English"),
-           DropdownButton<String>(
-            value: english,
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(color: Colors.deepPurple),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              setState(() {
-                              english = newValue;
-                            });
-                          },
-                          items: <String>['100', '50','0']
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                        SizedBox(height: 16.0),
-                         new Text("Math"),
-           DropdownButton<String>(
-            value: math,
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(color: Colors.deepPurple),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              setState(() {
-                              math = newValue;
-                            });
-                          },
-                          items: <String>['100', '50','0']
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                          SizedBox(height: 16.0),
-                         new Text("Science"),
-           DropdownButton<String>(
-            value: science,
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(color: Colors.deepPurple),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              setState(() {
-                              science = newValue;
-                            });
-                          },
-                          items: <String>['100', '50','0']
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                        SizedBox(height: 20.0),
-                         new RaisedButton(
-              child: new Text('done'),
-              onPressed:(){
-                  {
-       Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) =>
-                Graph(english: english, math: math , science: science,)),
-      );
-    }
-              }
-            ),
-
-        ]
-                    ),
-                  ),
+      body: Form(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 16.0),
+              new Text("Language 1"),
+              DropdownButton<String>(
+                value: language1,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    language1 = newValue;
+                  });
+                },
+                items: <String>[
+                  '35',
+                  '36',
+                  ' 37',
+                  '38',
+                  '39',
+                  '40',
+                  '41',
+                  '42',
+                  '43',
+                  '44',
+                  '45',
+                  '46',
+                  '47',
+                  '48',
+                  '49',
+                  '50',
+                  '51',
+                  '52',
+                  '53',
+                  '54',
+                  '55',
+                  '56',
+                  '57',
+                  '58',
+                  '59',
+                  '60',
+                  '61',
+                  '62',
+                  '63',
+                  '64',
+                  '65',
+                  '66',
+                  '67',
+                  '68',
+                  '69',
+                  '70',
+                  '71',
+                  '72',
+                  '73',
+                  '74',
+                  '75',
+                  '76',
+                  '77',
+                  '78',
+                  '79',
+                  '80',
+                  '81',
+                  '82',
+                  '83',
+                  '84',
+                  '85',
+                  '86',
+                  '87',
+                  '88',
+                  '89',
+                  '90',
+                  '91',
+                  '92',
+                  '93',
+                  '94',
+                  '95',
+                  '96',
+                  '97',
+                  '98',
+                  '99',
+                  '100'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 16.0),
+              new Text("Language 2"),
+              DropdownButton<String>(
+                value: language2,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    language2 = newValue;
+                  });
+                },
+                items: <String>[
+                  '35',
+                  '36',
+                  ' 37',
+                  '38',
+                  '39',
+                  '40',
+                  '41',
+                  '42',
+                  '43',
+                  '44',
+                  '45',
+                  '46',
+                  '47',
+                  '48',
+                  '49',
+                  '50',
+                  '51',
+                  '52',
+                  '53',
+                  '54',
+                  '55',
+                  '56',
+                  '57',
+                  '58',
+                  '59',
+                  '60',
+                  '61',
+                  '62',
+                  '63',
+                  '64',
+                  '65',
+                  '66',
+                  '67',
+                  '68',
+                  '69',
+                  '70',
+                  '71',
+                  '72',
+                  '73',
+                  '74',
+                  '75',
+                  '76',
+                  '77',
+                  '78',
+                  '79',
+                  '80',
+                  '81',
+                  '82',
+                  '83',
+                  '84',
+                  '85',
+                  '86',
+                  '87',
+                  '88',
+                  '89',
+                  '90',
+                  '91',
+                  '92',
+                  '93',
+                  '94',
+                  '95',
+                  '96',
+                  '97',
+                  '98',
+                  '99',
+                  '100'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 16.0),
+              new Text("Math"),
+              DropdownButton<String>(
+                value: math,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    math = newValue;
+                  });
+                },
+                items: <String>[
+                  '35',
+                  '36',
+                  ' 37',
+                  '38',
+                  '39',
+                  '40',
+                  '41',
+                  '42',
+                  '43',
+                  '44',
+                  '45',
+                  '46',
+                  '47',
+                  '48',
+                  '49',
+                  '50',
+                  '51',
+                  '52',
+                  '53',
+                  '54',
+                  '55',
+                  '56',
+                  '57',
+                  '58',
+                  '59',
+                  '60',
+                  '61',
+                  '62',
+                  '63',
+                  '64',
+                  '65',
+                  '66',
+                  '67',
+                  '68',
+                  '69',
+                  '70',
+                  '71',
+                  '72',
+                  '73',
+                  '74',
+                  '75',
+                  '76',
+                  '77',
+                  '78',
+                  '79',
+                  '80',
+                  '81',
+                  '82',
+                  '83',
+                  '84',
+                  '85',
+                  '86',
+                  '87',
+                  '88',
+                  '89',
+                  '90',
+                  '91',
+                  '92',
+                  '93',
+                  '94',
+                  '95',
+                  '96',
+                  '97',
+                  '98',
+                  '99',
+                  '100'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 16.0),
+              new Text("Social"),
+              DropdownButton<String>(
+                value: social,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    social = newValue;
+                  });
+                },
+                items: <String>[
+                  '35',
+                  '36',
+                  ' 37',
+                  '38',
+                  '39',
+                  '40',
+                  '41',
+                  '42',
+                  '43',
+                  '44',
+                  '45',
+                  '46',
+                  '47',
+                  '48',
+                  '49',
+                  '50',
+                  '51',
+                  '52',
+                  '53',
+                  '54',
+                  '55',
+                  '56',
+                  '57',
+                  '58',
+                  '59',
+                  '60',
+                  '61',
+                  '62',
+                  '63',
+                  '64',
+                  '65',
+                  '66',
+                  '67',
+                  '68',
+                  '69',
+                  '70',
+                  '71',
+                  '72',
+                  '73',
+                  '74',
+                  '75',
+                  '76',
+                  '77',
+                  '78',
+                  '79',
+                  '80',
+                  '81',
+                  '82',
+                  '83',
+                  '84',
+                  '85',
+                  '86',
+                  '87',
+                  '88',
+                  '89',
+                  '90',
+                  '91',
+                  '92',
+                  '93',
+                  '94',
+                  '95',
+                  '96',
+                  '97',
+                  '98',
+                  '99',
+                  '100'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 16.0),
+              new Text("Science"),
+              DropdownButton<String>(
+                value: science,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    science = newValue;
+                  });
+                },
+                items: <String>[
+                  '35',
+                  '36',
+                  ' 37',
+                  '38',
+                  '39',
+                  '40',
+                  '41',
+                  '42',
+                  '43',
+                  '44',
+                  '45',
+                  '46',
+                  '47',
+                  '48',
+                  '49',
+                  '50',
+                  '51',
+                  '52',
+                  '53',
+                  '54',
+                  '55',
+                  '56',
+                  '57',
+                  '58',
+                  '59',
+                  '60',
+                  '61',
+                  '62',
+                  '63',
+                  '64',
+                  '65',
+                  '66',
+                  '67',
+                  '68',
+                  '69',
+                  '70',
+                  '71',
+                  '72',
+                  '73',
+                  '74',
+                  '75',
+                  '76',
+                  '77',
+                  '78',
+                  '79',
+                  '80',
+                  '81',
+                  '82',
+                  '83',
+                  '84',
+                  '85',
+                  '86',
+                  '87',
+                  '88',
+                  '89',
+                  '90',
+                  '91',
+                  '92',
+                  '93',
+                  '94',
+                  '95',
+                  '96',
+                  '97',
+                  '98',
+                  '99',
+                  '100'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 20.0),
+              new RaisedButton(
+                  child: new Text('done'),
+                  onPressed: () {
+                    {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Graph(
+                                  language1: language1,
+                                  language2: language2,
+                                  math: math,
+                                  science: science,
+                                  social: social,
+                                )),
+                      );
+                    }
+                  }),
+            ]),
+      ),
     );
-                }
-              
-               
+  }
 }

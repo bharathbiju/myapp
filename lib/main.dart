@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:intl/intl.dart';
-
 import 'second_page.dart';
 
 void main() {
@@ -42,23 +40,28 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   bool _agreedToTOS = true;
   final name = TextEditingController();
   String birthDate = "";
   var dropdownValue;
   var section;
   int age = -1;
+
   TextStyle valueTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 20,
   );
+
   TextStyle textTextStyle = TextStyle(
     fontSize: 16,
   );
+
   TextStyle buttonTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 16,
   );
+
   calculateAge(DateTime birthDate) {
     DateTime currentDate = DateTime.now();
     int age = currentDate.year - birthDate.year;
@@ -79,7 +82,6 @@ class _RegisterFormState extends State<RegisterForm> {
   selectDate(BuildContext context, DateTime initialDateTime,
       {DateTime lastDate}) async {
     Completer completer = Completer();
-    String _selectedDateInString;
     if (Platform.isAndroid)
       showDatePicker(
               context: context,
@@ -108,6 +110,32 @@ class _RegisterFormState extends State<RegisterForm> {
     return completer.future;
   }
 
+  bool _submittable() {
+    return _agreedToTOS;
+  }
+
+  void _submit() {
+    _formKey.currentState.validate();
+    print('Form submitted');
+    {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => second_page(
+                  name: name.text,
+                  dropdownValue: dropdownValue,
+                  section: section,
+                )),
+      );
+    }
+  }
+
+  void _setAgreedToTOS(bool newValue) {
+    setState(() {
+      _agreedToTOS = newValue;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -115,16 +143,6 @@ class _RegisterFormState extends State<RegisterForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // TextFormField(
-          //   decoration: const InputDecoration(
-          //     labelText: 'Nickname',
-          //   ),
-          //   validator: (String value) {
-          //     if (value.trim().isEmpty) {
-          //       return 'Nickname is required';
-          //     }
-          //   },
-          // ),
           const SizedBox(height: 16.0),
           TextFormField(
             decoration: const InputDecoration(
@@ -163,7 +181,7 @@ class _RegisterFormState extends State<RegisterForm> {
               );
             }).toList(),
           ),
-           SizedBox(
+          SizedBox(
             height: 32,
           ),
           Text("class"),
@@ -251,7 +269,6 @@ class _RegisterFormState extends State<RegisterForm> {
               final df = new DateFormat('dd-MMM-yyyy');
               this.birthDate = df.format(birthDate);
               this.age = calculateAge(birthDate);
-
               setState(() {});
             },
             child: Container(
@@ -291,28 +308,5 @@ class _RegisterFormState extends State<RegisterForm> {
         ],
       ),
     );
-  }
-
-  bool _submittable() {
-    return _agreedToTOS;
-  }
-
-  void _submit() {
-    _formKey.currentState.validate();
-    print('Form submitted');
-    {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) =>
-                second_page(name: name.text, dropdownValue: dropdownValue , section: section,)),
-      );
-    }
-  }
-
-  void _setAgreedToTOS(bool newValue) {
-    setState(() {
-      _agreedToTOS = newValue;
-    });
   }
 }
