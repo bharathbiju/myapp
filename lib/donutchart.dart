@@ -49,7 +49,8 @@ class _GraphState extends State<Graph> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pie Chart"),
+        title: Text("Pie Chart for 10th"),
+     
       ),
       body: Container(
         child: Center(

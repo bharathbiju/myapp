@@ -19,7 +19,8 @@ environment:
 dependencies:
   pie_chart: ^3.1.1
   flutter_cupertino_date_picker: ^0.8.0
-  intl: ^0.15.8 
+  fab_circular_menu: ^0.1.5
+  intl: ^0.16.0 
   flutter:
     sdk: flutter
 
@@ -28,8 +29,10 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
-  flutter_test:
+  test: any
+  flutter_driver:
     sdk: flutter
+  
 
 
 # For information on the generic Dart part of this file, see the

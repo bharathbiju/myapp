@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void enablePlatformOverrideForDesktop() {
   if (!kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
@@ -61,11 +62,19 @@ class _GraphptState extends State<Graphpt> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = FabCircularMenuController();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pie Chart"),
+        title: Text("Summary for 12th"),
       ),
-      body: Container(
+      body: 
+      
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: togglePieChart,
+      //   child: Icon(Icons.insert_chart),
+      // ),
+       FabCircularMenu(
+         child :Container(
         child: Center(
           child: toggle
               ? PieChart(
@@ -91,11 +100,14 @@ class _GraphptState extends State<Graphpt> {
               : Text("Press FAB to show chart"),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: togglePieChart,
-        child: Icon(Icons.insert_chart),
-      ),
-    );
+       ringColor: Colors.blue,
+          controller: controller,
+          options: <Widget>[
+            IconButton(icon: Icon(Icons.insert_chart), onPressed: togglePieChart, iconSize: 48.0, color: Colors.black),
+            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {}, iconSize: 48.0, color: Colors.black),
+          ],
+        ),
+      );
   }
 
   void togglePieChart() {
