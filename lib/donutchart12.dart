@@ -23,6 +23,8 @@ class Graphpt extends StatefulWidget {
     this.mark4,
     this.subject5,
     this.mark5,
+    this.subject6,
+    this.mark6,
   }) : super(key: key);
 
   var subject1,
@@ -34,7 +36,9 @@ class Graphpt extends StatefulWidget {
       subject4,
       mark4,
       subject5,
-      mark5;
+      mark5,
+      subject6,
+      mark6;
 
   @override
   _GraphptState createState() => _GraphptState();
@@ -58,6 +62,7 @@ class _GraphptState extends State<Graphpt> {
     dataMap.putIfAbsent(widget.subject3, () => double.parse(widget.mark3));
     dataMap.putIfAbsent(widget.subject4, () => double.parse(widget.mark4));
     dataMap.putIfAbsent(widget.subject5, () => double.parse(widget.mark5));
+    dataMap.putIfAbsent(widget.subject6, () => double.parse(widget.mark6));
   }
 
   @override
@@ -65,7 +70,7 @@ class _GraphptState extends State<Graphpt> {
     final controller = FabCircularMenuController();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Summary for 12th"),
+        title: Text("Analysis based on 12th Mark"),
       ),
       body: 
       

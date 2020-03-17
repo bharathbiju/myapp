@@ -42,14 +42,14 @@ class _GraphState extends State<Graph> {
     dataMap.putIfAbsent("language2", () => double.parse(widget.language2));
     dataMap.putIfAbsent("social", () => double.parse(widget.social));
     dataMap.putIfAbsent("Math", () => double.parse(widget.math));
-    dataMap.putIfAbsent("Sceience", () => double.parse(widget.science));
+    dataMap.putIfAbsent("Science", () => double.parse(widget.science));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pie Chart for 10th"),
+        title: Text("Analysis based on 10th Mark"),
      
       ),
       body: Container(

@@ -19,6 +19,8 @@ environment:
 dependencies:
   pie_chart: ^3.1.1
   flutter_cupertino_date_picker: ^0.8.0
+  http:
+  json_annotation:
   fab_circular_menu: ^0.1.5
   intl: ^0.16.0 
   flutter:
@@ -30,6 +32,7 @@ dependencies:
 
 dev_dependencies:
   test: any
+  connectivity: any
   flutter_driver:
     sdk: flutter
   
