@@ -12,6 +12,9 @@ class Plustwomarkthmark extends State<Plustwomark> {
 
   var subject2;
 
+  var subject6;
+  var mark6;
+
   String subject3;
 
   var mark3;
@@ -28,12 +31,137 @@ class Plustwomarkthmark extends State<Plustwomark> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Plustwomarkth mark"),
+        title: Text("Plustwo Mark Details"),
       ),
       body: Form(
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+
+              new Row(children: <Widget>[
+                DropdownButton<String>(
+                  value: subject6,
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                       subject6 = newValue;
+                    });
+                  },
+                  items: <String>[
+                    'Language1',
+                    'Language2',
+                    'CompSci',
+                    'Physics',
+                    'Chemistry',
+                    'Maths',
+                    'Biology',
+                    'economics',
+                    'commerce',
+                    'accountancy'
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+                SizedBox(width: 16.0),
+                DropdownButton<String>(
+                  value: mark6,
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      mark6 = newValue;
+                    });
+                  },
+                  items: <String>[
+                    '35',
+                    '36',
+                    ' 37',
+                    '38',
+                    '39',
+                    '40',
+                    '41',
+                    '42',
+                    '43',
+                    '44',
+                    '45',
+                    '46',
+                    '47',
+                    '48',
+                    '49',
+                    '50',
+                    '51',
+                    '52',
+                    '53',
+                    '54',
+                    '55',
+                    '56',
+                    '57',
+                    '58',
+                    '59',
+                    '60',
+                    '61',
+                    '62',
+                    '63',
+                    '64',
+                    '65',
+                    '66',
+                    '67',
+                    '68',
+                    '69',
+                    '70',
+                    '71',
+                    '72',
+                    '73',
+                    '74',
+                    '75',
+                    '76',
+                    '77',
+                    '78',
+                    '79',
+                    '80',
+                    '81',
+                    '82',
+                    '83',
+                    '84',
+                    '85',
+                    '86',
+                    '87',
+                    '88',
+                    '89',
+                    '90',
+                    '91',
+                    '92',
+                    '93',
+                    '94',
+                    '95',
+                    '96',
+                    '97',
+                    '98',
+                    '99',
+                    '100'
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ]),
+              SizedBox(height: 16.0),
               new Row(children: <Widget>[
                 DropdownButton<String>(
                   value: subject1,
@@ -652,6 +780,7 @@ class Plustwomarkthmark extends State<Plustwomark> {
                     );
                   }).toList(),
                 ),
+                
               ]),
               SizedBox(height: 16.0),
               new RaisedButton(
@@ -671,7 +800,9 @@ class Plustwomarkthmark extends State<Plustwomark> {
                                 subject4: subject4,
                                 mark4: mark4,
                                 subject5: subject5,
-                                mark5: mark5)),
+                                mark5: mark5,
+                                subject6: subject6,
+                                mark6: mark6)),
                       );
                     }
                   }),

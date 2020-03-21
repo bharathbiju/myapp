@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:myapp/clg_details.dart';
+import 'package:myapp/course_details.dart';
 import 'second_page.dart';
 
 void main() {
@@ -20,6 +22,10 @@ class MyApp extends StatelessWidget {
         title: const Text('Register'),
         centerTitle: true,
         elevation: 0.0,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.book), onPressed:(){ Navigator.push(context, MaterialPageRoute(builder: ((context)=> Ingredient())));}),
+          IconButton(icon: Icon(Icons.home), onPressed:(){ Navigator.push(context, MaterialPageRoute(builder: ((context)=> Clg())));})
+        ],
       ),
       body: const SingleChildScrollView(
         child: Padding(
@@ -289,7 +295,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 GestureDetector(
                   onTap: () => _setAgreedToTOS(!_agreedToTOS),
                   child: const Text(
-                    'I promise o have given the right details',
+                    'I promise to have given the right details ',
                   ),
                 ),
               ],

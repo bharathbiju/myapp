@@ -1,7 +1,9 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/interest.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void enablePlatformOverrideForDesktop() {
   if (!kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
@@ -22,6 +24,8 @@ class Graphpt extends StatefulWidget {
     this.mark4,
     this.subject5,
     this.mark5,
+    this.subject6,
+    this.mark6,
   }) : super(key: key);
 
   var subject1,
@@ -33,7 +37,9 @@ class Graphpt extends StatefulWidget {
       subject4,
       mark4,
       subject5,
-      mark5;
+      mark5,
+      subject6,
+      mark6;
 
   @override
   _GraphptState createState() => _GraphptState();
@@ -57,15 +63,24 @@ class _GraphptState extends State<Graphpt> {
     dataMap.putIfAbsent(widget.subject3, () => double.parse(widget.mark3));
     dataMap.putIfAbsent(widget.subject4, () => double.parse(widget.mark4));
     dataMap.putIfAbsent(widget.subject5, () => double.parse(widget.mark5));
+    dataMap.putIfAbsent(widget.subject6, () => double.parse(widget.mark6));
   }
 
   @override
   Widget build(BuildContext context) {
+    final controller = FabCircularMenuController();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pie Chart"),
+        title: Text("Analysis based on 12th Mark"),
       ),
-      body: Container(
+      body: 
+      
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: togglePieChart,
+      //   child: Icon(Icons.insert_chart),
+      // ),
+       FabCircularMenu(
+         child :Container(
         child: Center(
           child: toggle
               ? PieChart(
@@ -91,11 +106,22 @@ class _GraphptState extends State<Graphpt> {
               : Text("Press FAB to show chart"),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: togglePieChart,
-        child: Icon(Icons.insert_chart),
-      ),
-    );
+       ringColor: Colors.blue,
+          controller: controller,
+          options: <Widget>[
+            IconButton(icon: Icon(Icons.insert_chart), onPressed: togglePieChart, iconSize: 48.0, color: Colors.black),
+            IconButton(icon: Icon(Icons.arrow_forward), onPressed:() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => InterestPage(
+                                        
+                                        )));
+                          },
+                           iconSize: 48.0, color: Colors.black),
+          ],
+        ),
+      );
   }
 
   void togglePieChart() {
