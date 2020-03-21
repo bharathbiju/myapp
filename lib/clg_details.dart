@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:myapp/clg_details_explained.dart';
 import 'dart:convert';
 
-import 'course_details_explained.dart';
-
-class Ingredient extends StatefulWidget {
+class Clg extends StatefulWidget {
   @override
-  _IngredientState createState() => _IngredientState();
+  _ClgState createState() => _ClgState();
 }
 
-class _IngredientState extends State<Ingredient> {
-  List<IngredientList> _list = List<IngredientList>();
+class _ClgState extends State<Clg> {
+  List<ClgList> _list_clg = List<ClgList>();
   final globalKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
   bool _isSearching;
   String _searchText = "";
-  List<IngredientList> searchresult = List<IngredientList>();
+  List<ClgList> searchresult = List<ClgList>();
 
-  _IngredientState() {
+  _clgState() {
     _controller.addListener(() {
       if (_controller.text.isEmpty) {
         setState(() {
@@ -34,18 +33,18 @@ class _IngredientState extends State<Ingredient> {
   }
 
   Widget appBarTitle = new Text(
-    "",
+    "Collage Details",
   );
-  Future<List<IngredientList>> fetchNotes() async {
+  Future<List<ClgList>> fetchNotes() async {
     var url =
         'https://raw.githubusercontent.com/Samson-Antony/final-project/master/json/course/cousre_list.json';
     var response = await http.get(url);
 
-    var ingList = List<IngredientList>();
+    var ingList = List<ClgList>();
     if (response.statusCode == 200) {
       var ingListJson = json.decode(response.body);
       for (var ingListJson in ingListJson) {
-        ingList.add(IngredientList.fromJson(ingListJson));
+        ingList.add(ClgList.fromJson(ingListJson));
       }
     }
     return ingList;
@@ -112,10 +111,10 @@ class _IngredientState extends State<Ingredient> {
   void searchOperation(String searchText) {
     searchresult.clear();
     if (_isSearching != null) {
-      for (int i = 0; i < _list.length; i++) {
-        String data = _list[i].title;
+      for (int i = 0; i < _list_clg.length; i++) {
+        String data = _list_clg[i].title;
         if (data.toLowerCase().contains(searchText.toLowerCase())) {
-          searchresult.add(_list[i]);
+          searchresult.add(_list_clg[i]);
         }
       }
     }
@@ -125,8 +124,8 @@ class _IngredientState extends State<Ingredient> {
   void initState() {
     fetchNotes().then((value) {
       setState(() {
-        _list.addAll(value);
-        _list.sort((a, b) => a.title.compareTo(b.title));
+        _list_clg.addAll(value);
+        _list_clg.sort((a, b) => a.title.compareTo(b.title));
       });
     });
     super.initState();
@@ -174,7 +173,7 @@ class _IngredientState extends State<Ingredient> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ImagePage(
+                                    builder: (context) => ClgImagePage(
                                           list: searchresult[index],
                                         )));
                           },
@@ -183,7 +182,7 @@ class _IngredientState extends State<Ingredient> {
                     )
                   : ListView.builder(
                       shrinkWrap: true,
-                      itemCount: _list.length,
+                      itemCount: _list_clg.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           child: Card(
@@ -197,7 +196,7 @@ class _IngredientState extends State<Ingredient> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    _list[index].title,
+                                    _list_clg[index].title,
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),
@@ -210,8 +209,8 @@ class _IngredientState extends State<Ingredient> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ImagePage(
-                                          list: _list[index],
+                                    builder: (context) => ClgImagePage(
+                                          list: _list_clg[index],
                                         )));
                           },
                         );
@@ -223,19 +222,12 @@ class _IngredientState extends State<Ingredient> {
   }
 }
 
-class IngredientList {
+class ClgList {
   String title;
-  String content;
-  String eligibility;
-  String work;
-  String bestclg;
-  IngredientList(this.title,this.content,this.eligibility,this.work,this.bestclg);
 
-  IngredientList.fromJson(Map<String, dynamic> json) {
+  ClgList(this.title);
+
+  ClgList.fromJson(Map<String, dynamic> json) {
     title = json['title'];
-    content=json['content'];
-    eligibility=json['eligibility'];
-    work=json['work'];
-    bestclg=json['bestclg'];
   }
 }
