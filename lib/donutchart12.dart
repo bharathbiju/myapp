@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/interest.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
@@ -109,7 +110,15 @@ class _GraphptState extends State<Graphpt> {
           controller: controller,
           options: <Widget>[
             IconButton(icon: Icon(Icons.insert_chart), onPressed: togglePieChart, iconSize: 48.0, color: Colors.black),
-            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {}, iconSize: 48.0, color: Colors.black),
+            IconButton(icon: Icon(Icons.arrow_forward), onPressed:() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => InterestPage(
+                                        
+                                        )));
+                          },
+                           iconSize: 48.0, color: Colors.black),
           ],
         ),
       );
