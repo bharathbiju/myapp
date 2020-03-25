@@ -37,7 +37,7 @@ class _ClgState extends State<Clg> {
   );
   Future<List<ClgList>> fetchNotes() async {
     var url =
-        'https://raw.githubusercontent.com/Samson-Antony/final-project/master/json/course/cousre_list.json';
+        'https://raw.githubusercontent.com/Samson-Antony/final-project/master/json/clg_list.json';
     var response = await http.get(url);
 
     var ingList = List<ClgList>();
@@ -112,7 +112,7 @@ class _ClgState extends State<Clg> {
     searchresult.clear();
     if (_isSearching != null) {
       for (int i = 0; i < _list_clg.length; i++) {
-        String data = _list_clg[i].title;
+        String data = _list_clg[i].collegename;
         if (data.toLowerCase().contains(searchText.toLowerCase())) {
           searchresult.add(_list_clg[i]);
         }
@@ -125,7 +125,7 @@ class _ClgState extends State<Clg> {
     fetchNotes().then((value) {
       setState(() {
         _list_clg.addAll(value);
-        _list_clg.sort((a, b) => a.title.compareTo(b.title));
+        _list_clg.sort((a, b) => a.collegename.compareTo(b.collegename));
       });
     });
     super.initState();
@@ -160,7 +160,7 @@ class _ClgState extends State<Clg> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    searchresult[index].title,
+                                    searchresult[index].collegename,
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),
@@ -196,7 +196,7 @@ class _ClgState extends State<Clg> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    _list_clg[index].title,
+                                    _list_clg[index].collegename,
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),
@@ -223,11 +223,24 @@ class _ClgState extends State<Clg> {
 }
 
 class ClgList {
-  String title;
+  String collegename;
+  String description;
+  String address;
+  String longitude;
+  String latitude;
+  String extra;
+  String webpage;
 
-  ClgList(this.title);
+  ClgList(this.collegename, this.description, this.address, this.latitude,
+      this.longitude, this.extra, this.webpage);
 
   ClgList.fromJson(Map<String, dynamic> json) {
-    title = json['title'];
+    collegename = json['collegename'];
+    description= json['description'];
+    address= json['address'];
+    longitude= json['longitude'];
+    latitude= json['latitude'];
+    extra= json['extra'];
+    webpage= json['webpage'];
   }
 }

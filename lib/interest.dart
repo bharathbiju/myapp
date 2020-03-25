@@ -28,8 +28,8 @@ class _InterestPageState extends State<InterestPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: new MultiSelect(
                     autovalidate: true,
-                    initialValue: ['IN', 'US'],
-                    titleText: 'Country of Residence',
+                    initialValue: [],
+                    titleText: 'Select your preference',
                     maxLength: 5, // optional
                     validator: (dynamic value) {
                       if (value == null) {
@@ -179,11 +179,11 @@ class _InterestPageState extends State<InterestPage> {
     
     ],
                     textField: 'name',
-                    valueField: 'code',
+                    valueField: 'name',
                     filterable: true,
                     required: true,
-                    onSaved: (value) {
-                      print('The value is $value');
+                    onSaved: (text) {
+                      print('The value is $text');
                     }),
               ),
               SizedBox(
