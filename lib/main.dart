@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:myapp/registration.dart';
+import 'package:myapp/frontpage.dart';
 
  
 void main() => runApp(SplashHandler());
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(Duration(seconds: 3), () async {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyApp()));
+          context, MaterialPageRoute(builder: (context) => Frontpage()));
     });
   }
 
