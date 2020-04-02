@@ -96,6 +96,11 @@ class _GraphState extends State<Graph> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => InterestPage(
+                                      language1: widget.language1,
+                                  language2: widget.language2,
+                                  math: widget.math,
+                                  science: widget.science,
+                                  social: widget.social,
                                         
                                         )));
                           },

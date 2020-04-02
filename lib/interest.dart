@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_multiselect/flutter_multiselect.dart';
+import 'package:myapp/cganalyser.dart';
 
 
 class InterestPage extends StatefulWidget {
+InterestPage(
+      {Key key,
+      this.language1,
+      this.language2,
+      this.math,
+      this.social,
+      this.science})
+      : super(key: key);
 
+  var language1, science, math, language2, social;
 
   @override
   _InterestPageState createState() => _InterestPageState();
@@ -184,6 +194,19 @@ class _InterestPageState extends State<InterestPage> {
                     required: true,
                     onSaved: (text) {
                       print('The value is $text');
+                      {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CgAnalyser(
+                                      language1: widget.language1,
+                                  language2: widget.language2,
+                                  math: widget.math,
+                                  science: widget.science,
+                                  social: widget.social,
+                                        
+                                        )));
+                          }
                     }),
               ),
               SizedBox(

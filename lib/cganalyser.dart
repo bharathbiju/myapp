@@ -4,38 +4,47 @@ import 'dart:convert';
 
 
 class CgAnalyser extends StatefulWidget {
+    var  language1, science, math, language2, social;
+  CgAnalyser(
+      
+      {Key key,
+      this.language1,
+      this.language2,
+      this.math,
+      this.social,
+      this.science})
+      : super(key: key);
+
+  
+
+ 
   @override
   _CgAnalyserState createState() => _CgAnalyserState();
 }
 
+
 class _CgAnalyserState extends State<CgAnalyser> {
+
   List<CgAnalyserList> _list = List<CgAnalyserList>();
   final globalKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
   bool _isSearching;
   String _searchText = "";
+  var fet;
   List<CgAnalyserList> searchresult = List<CgAnalyserList>();
+       
 
-  // _CgAnalyserState() {
-  //   _controller.addListener(() {
-  //     if (_controller.text.isEmpty) {
-  //       setState(() {
-  //         _isSearching = false;
-  //         _searchText = "";
-  //       });
-  //     } else {
-  //       setState(() {
-  //         _isSearching = true;
-  //         _searchText = _controller.text;
-  //       });
-  //     }
-  //   });
-  // }
+  String mark="";
+
 
   Widget appBarTitle = new Text(
     "",
   );
+
   Future<List<CgAnalyserList>> fetchNotes() async {
+     print((widget.language1));
+    mark="(${widget.language1.toString()}, ${widget.language1.toString()}, ${widget.language1.toString()}, ${widget.language1.toString()}, ${widget.language1})";
+    print(mark);
     var url =
         'https://raw.githubusercontent.com/Samson-Antony/final-project/master/for%20loop%20prediction/10th-prediction.json';
     var response = await http.get(url);
@@ -64,7 +73,10 @@ class _CgAnalyserState extends State<CgAnalyser> {
   padding: EdgeInsets.all(8.0),
   splashColor: Colors.blueAccent,
   onPressed: () {
-    /*...*/searchOperation("(90, 90, 90, 90, 90)");
+    /*...*/searchOperation(mark);
+    setState(() {
+      fet="bmb";
+    });
   },
   child: Text(
     "Results",
@@ -145,9 +157,11 @@ class _CgAnalyserState extends State<CgAnalyser> {
     });
     super.initState();
     _isSearching = false;
+    searchOperation(mark);
   }
 
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       key: globalKey,
@@ -155,10 +169,12 @@ class _CgAnalyserState extends State<CgAnalyser> {
       body: Container(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Flexible(
-              child:  ListView.builder(
+               child: searchresult.length != 0 
+                  ?   ListView.builder(
                       shrinkWrap: true,
                       itemCount: searchresult.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -193,10 +209,20 @@ class _CgAnalyserState extends State<CgAnalyser> {
                           },
                         );
                       },
-                    )
+                    ):
+                    Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    "press Result",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
                   // : ListView.builder(
                   //     shrinkWrap: true,
-                  //     itemCount: _list.length,
                   //     itemBuilder: (context, index) {
                   //       return GestureDetector(
                   //         child: Card(
@@ -210,7 +236,7 @@ class _CgAnalyserState extends State<CgAnalyser> {
                   //               crossAxisAlignment: CrossAxisAlignment.start,
                   //               children: <Widget>[
                   //                 Text(
-                  //                   _list[index].input,
+                  //                   "press Result",
                   //                   style: TextStyle(
                   //                     fontSize: 18,
                   //                   ),
@@ -229,8 +255,9 @@ class _CgAnalyserState extends State<CgAnalyser> {
                   //         },
                   //       );
                   //     },
-                  //   ))
-          )
+                  //   )
+                    )
+          
         ],
       )),
     );
