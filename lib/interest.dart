@@ -204,6 +204,8 @@ class _InterestPageState extends State<InterestPage> {
                                   math: widget.math,
                                   science: widget.science,
                                   social: widget.social,
+                                  
+                                  text:text
                                         
                                         )));
                           }
