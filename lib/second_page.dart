@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/12thmarks.dart';
+import 'package:myapp/g1marks.dart';
+import 'package:myapp/g2marks.dart';
+import 'package:myapp/g3marks.dart';
 import 'package:myapp/plustwomark.dart';
-import 'package:myapp/tenthmark.dart';
 
 class second_page extends StatelessWidget {
-  second_page({Key key, this.name, this.dropdownValue, this.section})
-      : super(key: key);
-  final String name;
-  final String dropdownValue;
-  final String section;
+  
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text("welcome " + name),
+        title: Text("welcome "),
         centerTitle: true,
         elevation: 0.0,
       ),
@@ -22,50 +21,57 @@ class second_page extends StatelessWidget {
               .min, // this will take space as minimum as posible(to center)
           children: <Widget>[
             new RaisedButton(
-              child: new Text('marks'),
-              onPressed: check()
-                  ? () {
-                      class10(context);
+              child: new Text('G1'),
+              onPressed: () {
+                var GroupType='1';
+                var subject1='computer';
+                var subject2='English';
+                var subject3='English';
+                var subject4='English';
+                var subject5='English';
+                var subject6='English';
+                Navigator.push(context,
+
+                    MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
+                    subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
+                      
                     }
-                  : () {
-                      class12(context);
-                    },
             ),
             new RaisedButton(
-              child: new Text('intrest'),
-              onPressed: null,
+              child: new Text('G2'),
+              onPressed: () {
+                var GroupType='2';
+                 var subject1='bio';
+                var subject2='English';
+                var subject3='English';
+                var subject4='English';
+                var subject5='English';
+                var subject6='English';
+                      Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
+                    subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
+                    },
             ),
-            new RaisedButton(child: new Text('result'), onPressed: null),
+            new RaisedButton(child: new Text('G3'), onPressed: () {
+              var GroupType='3';
+               var subject1='Eco';
+                var subject2='English';
+                var subject3='English';
+                var subject4='English';
+                var subject5='English';
+                var subject6='English';
+              Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
+                    subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
+                      
+                    }),
+             new RaisedButton(child: new Text('Others'), onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => Plustwomark())));
+              }),
           ],
         ),
       ),
     );
-  }
-
-  bool check() {
-    if (section == '10')
-      return true;
-    else
-      return false;
-  }
-
-  void class10(BuildContext context) {
-    print('Form submitted');
-    {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Ten()),
-      );
-    }
-  }
-
-  void class12(BuildContext context) {
-    print('Form submitted');
-    {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Plustwomark()),
-      );
-    }
   }
 }

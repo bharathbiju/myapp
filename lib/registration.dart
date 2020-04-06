@@ -5,6 +5,7 @@ import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart
 import 'package:intl/intl.dart';
 import 'package:myapp/clg_details.dart';
 import 'package:myapp/course_details.dart';
+import 'package:myapp/tenthmark.dart';
 import 'second_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -151,15 +152,17 @@ class _RegisterFormState extends State<RegisterForm> {
               if (value.trim().isEmpty) {
                 return 'Full name is required';
               } else {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => second_page(
-                            name: name.text,
-                            dropdownValue: dropdownValue,
-                            section: section,
-                          )),
-                );
+                check();
+                  
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => second_page(
+                //             name: name.text,
+                //             dropdownValue: dropdownValue,
+                //             section: section,
+                //           )),
+                // );
               }
             },
           ),
@@ -317,4 +320,24 @@ class _RegisterFormState extends State<RegisterForm> {
       ),
     );
   }
+   bool check() {
+    if (this.section == '10')
+       {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Ten()),
+      );
+    }
+    else
+        {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => second_page()),
+      );
+    }
+  }
 }
+
+
+
+ 

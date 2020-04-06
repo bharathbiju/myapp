@@ -438,17 +438,17 @@ class Plustwomarkthmark extends State<Plustwomark> {
                         MaterialPageRoute(
                             builder: (context) => Graphpt(
                                 subject1: subject1,
-                                mark1: mark1,
+                                m1: mark1,
                                 subject2: subject2,
-                                mark2: mark2,
+                                m2: mark2,
                                 subject3: subject3,
-                                mark3: mark3,
+                                m3: mark3,
                                 subject4: subject4,
-                                mark4: mark4,
+                                m4: mark4,
                                 subject5: subject5,
-                                mark5: mark5,
+                                m5: mark5,
                                 subject6: subject6,
-                                mark6: mark6)),
+                                m6: mark6)),
                       );
                     }
                   }),
