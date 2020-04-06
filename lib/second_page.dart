@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/12thmarks.dart';
-import 'package:myapp/g1marks.dart';
-import 'package:myapp/g2marks.dart';
-import 'package:myapp/g3marks.dart';
 import 'package:myapp/plustwomark.dart';
 
 class second_page extends StatelessWidget {
