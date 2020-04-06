@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -37,7 +39,7 @@ class _CgAnalyserState extends State<CgAnalyser> {
   );
 
   Future<List<CgAnalyserList2>> fetchNotes2() async {
-    text = "ba_english";
+    
     var url2 =
         'https://raw.githubusercontent.com/Samson-Antony/final-project/json_file/for%20loop%20prediction/test.json';
     var response2 = await http.get(url2);
@@ -85,8 +87,13 @@ class _CgAnalyserState extends State<CgAnalyser> {
         padding: EdgeInsets.all(8.0),
         splashColor: Colors.blueAccent,
         onPressed: () {
+          searchresult.clear();
+          searchresult2.clear();
           /*...*/ searchOperation(mark);
-          searchOperation2(text);
+          for (var item in widget.text) {
+          searchOperation2(item);
+          }
+         
           setState(() {
             fet = "bmb";
           });
@@ -149,7 +156,6 @@ class _CgAnalyserState extends State<CgAnalyser> {
   // }
 
   void searchOperation(String searchText) {
-    searchresult.clear();
     if (_isSearching != null) {
       for (int i = 0; i < _list.length; i++) {
         String data = _list[i].input;
@@ -187,8 +193,6 @@ class _CgAnalyserState extends State<CgAnalyser> {
     });
     super.initState();
     _isSearching = false;
-    searchOperation(mark);
-    searchOperation2(text);
   }
 
   @override
@@ -206,7 +210,8 @@ class _CgAnalyserState extends State<CgAnalyser> {
                 ? new Center(
                     child: Column(
                       children: <Widget>[
-                        ListView.builder(
+                        Expanded(child: new Text("Based on Intrest")),
+                        Expanded(child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: searchresult2.length,
                           itemBuilder: (BuildContext context, int index) {
@@ -242,9 +247,13 @@ class _CgAnalyserState extends State<CgAnalyser> {
                               },
                             );
                           },
-                        ),
+                        ),),
+                        Expanded(child: new Text("Based on marks")),
+                        
                         Expanded(
-                            child: ListView.builder(
+                          
+                            
+                             child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: searchresult.length,
                           itemBuilder: (BuildContext context, int index) {

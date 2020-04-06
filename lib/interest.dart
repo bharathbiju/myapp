@@ -189,7 +189,7 @@ class _InterestPageState extends State<InterestPage> {
     
     ],
                     textField: 'name',
-                    valueField: 'name',
+                    valueField: 'code',
                     filterable: true,
                     required: true,
                     onSaved: (text) {
