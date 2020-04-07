@@ -193,7 +193,7 @@ class PlusTwothmark extends State<PlusTwo> {
               SizedBox(height: 16.0),
               new Row(children: <Widget>[
                 SizedBox(width: 16.0),
-                new Text(widget.subject4),
+                new Text(widget.subject5),
                 SizedBox(width: 16.0),
                 DropdownButton<String>(
                   value: m5,
