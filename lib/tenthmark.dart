@@ -37,12 +37,19 @@ class Tenthmark extends State<Ten> {
                     });
                   },
                   items: <String>[
+                    '35',
                     '40',
+                    '45',
                     '50',
+                    '55',
                     '60',
+                    '65',
                     '70',
+                    '75',
                     '80',
+                    '85',
                     '90',
+                    '95',
                     '100'
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -72,12 +79,19 @@ class Tenthmark extends State<Ten> {
                     });
                   },
                   items: <String>[
-                   '40',
+                   '35',
+                    '40',
+                    '45',
                     '50',
+                    '55',
                     '60',
+                    '65',
                     '70',
+                    '75',
                     '80',
+                    '85',
                     '90',
+                    '95',
                     '100'
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -107,12 +121,19 @@ class Tenthmark extends State<Ten> {
                     });
                   },
                   items: <String>[
-                   '40',
+                  '35',
+                    '40',
+                    '45',
                     '50',
+                    '55',
                     '60',
+                    '65',
                     '70',
+                    '75',
                     '80',
+                    '85',
                     '90',
+                    '95',
                     '100'
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -142,12 +163,19 @@ class Tenthmark extends State<Ten> {
                     });
                   },
                   items: <String>[
+                  '35',
                     '40',
+                    '45',
                     '50',
+                    '55',
                     '60',
+                    '65',
                     '70',
+                    '75',
                     '80',
+                    '85',
                     '90',
+                    '95',
                     '100'
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -177,12 +205,19 @@ class Tenthmark extends State<Ten> {
                     });
                   },
                   items: <String>[
-                  '40',
+                 '35',
+                    '40',
+                    '45',
                     '50',
+                    '55',
                     '60',
+                    '65',
                     '70',
+                    '75',
                     '80',
+                    '85',
                     '90',
+                    '95',
                     '100'
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
