@@ -281,6 +281,7 @@ class PlusTwothmark extends State<PlusTwo> {
                                   m4: m4,
                                   m5: m5,
                                   m6: m6,
+                                  gt:widget.GroupType
 
                                 )),
                       );

@@ -26,6 +26,7 @@ class Graphpt extends StatefulWidget {
     this.m5,
     this.subject6,
     this.m6,
+    this.gt
   }) : super(key: key);
 
   var subject1,
@@ -39,7 +40,7 @@ class Graphpt extends StatefulWidget {
       subject5,
       m5,
       subject6,
-      m6;
+      m6,gt;
 
   @override
   _GraphptState createState() => _GraphptState();
@@ -115,7 +116,13 @@ class _GraphptState extends State<Graphpt> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => InterestPage(
-                                        
+                                        language1: widget.m1,
+                                  language2: widget.m2,
+                                  math: widget.m3,
+                                  science: widget.m4,
+                                  social: widget.m5,
+                                  subject6:widget.m6,
+                                  grouptype:widget.gt
                                         )));
                           },
                            iconSize: 48.0, color: Colors.black),

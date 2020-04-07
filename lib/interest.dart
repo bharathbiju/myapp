@@ -10,10 +10,12 @@ InterestPage(
       this.language2,
       this.math,
       this.social,
-      this.science})
+      this.science,
+      this.subject6,
+      this.grouptype})
       : super(key: key);
 
-  var language1, science, math, language2, social;
+  var language1, science, math, language2, social,subject6,grouptype;
 
   @override
   _InterestPageState createState() => _InterestPageState();
@@ -204,6 +206,8 @@ class _InterestPageState extends State<InterestPage> {
                                   math: widget.math,
                                   science: widget.science,
                                   social: widget.social,
+                                  subject6:widget.subject6,
+                                  grouptype:widget.grouptype,
                                   
                                   text:text
                                         

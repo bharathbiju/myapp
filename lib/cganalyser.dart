@@ -6,6 +6,10 @@ import 'dart:convert';
 
 class CgAnalyser extends StatefulWidget {
   var language1, science, math, language2, social, text;
+
+  var subject6;
+
+  var grouptype;
   CgAnalyser(
       {Key key,
       this.language1,
@@ -13,7 +17,10 @@ class CgAnalyser extends StatefulWidget {
       this.math,
       this.social,
       this.science,
-      this.text})
+      this.subject6,
+      this.grouptype,
+      this.text
+      })
       : super(key: key);
 
   @override
