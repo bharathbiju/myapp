@@ -9,14 +9,14 @@ class Clg extends StatefulWidget {
 }
 
 class _ClgState extends State<Clg> {
-  List<ClgList> _list_clg = List<ClgList>();
+  List<ClgList> _listClg = List<ClgList>();
   final globalKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
   bool _isSearching;
   String _searchText = "";
   List<ClgList> searchresult = List<ClgList>();
 
-  _clgState() {
+  _ClgState() {
     _controller.addListener(() {
       if (_controller.text.isEmpty) {
         setState(() {
@@ -111,10 +111,10 @@ class _ClgState extends State<Clg> {
   void searchOperation(String searchText) {
     searchresult.clear();
     if (_isSearching != null) {
-      for (int i = 0; i < _list_clg.length; i++) {
-        String data = _list_clg[i].collegename;
+      for (int i = 0; i < _listClg.length; i++) {
+        String data = _listClg[i].collegename;
         if (data.toLowerCase().contains(searchText.toLowerCase())) {
-          searchresult.add(_list_clg[i]);
+          searchresult.add(_listClg[i]);
         }
       }
     }
@@ -124,8 +124,8 @@ class _ClgState extends State<Clg> {
   void initState() {
     fetchNotes().then((value) {
       setState(() {
-        _list_clg.addAll(value);
-        _list_clg.sort((a, b) => a.collegename.compareTo(b.collegename));
+        _listClg.addAll(value);
+        _listClg.sort((a, b) => a.collegename.compareTo(b.collegename));
       });
     });
     super.initState();
@@ -182,7 +182,7 @@ class _ClgState extends State<Clg> {
                     )
                   : ListView.builder(
                       shrinkWrap: true,
-                      itemCount: _list_clg.length,
+                      itemCount: _listClg.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           child: Card(
@@ -196,7 +196,7 @@ class _ClgState extends State<Clg> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    _list_clg[index].collegename,
+                                    _listClg[index].collegename,
                                     style: TextStyle(
                                       fontSize: 18,
                                     ),
@@ -210,7 +210,7 @@ class _ClgState extends State<Clg> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => ClgImagePage(
-                                          list: _list_clg[index],
+                                          list: _listClg[index],
                                         )));
                           },
                         );

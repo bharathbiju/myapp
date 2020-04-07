@@ -15,31 +15,32 @@ class Graphpt extends StatefulWidget {
   Graphpt({
     Key key,
     this.subject1,
-    this.mark1,
+    this.m1,
     this.subject2,
-    this.mark2,
+    this.m2,
     this.subject3,
-    this.mark3,
+    this.m3,
     this.subject4,
-    this.mark4,
+    this.m4,
     this.subject5,
-    this.mark5,
+    this.m5,
     this.subject6,
-    this.mark6,
+    this.m6,
+    this.gt
   }) : super(key: key);
 
   var subject1,
-      mark1,
+      m1,
       subject2,
-      mark2,
+      m2,
       subject3,
-      mark3,
+      m3,
       subject4,
-      mark4,
+      m4,
       subject5,
-      mark5,
+      m5,
       subject6,
-      mark6;
+      m6,gt;
 
   @override
   _GraphptState createState() => _GraphptState();
@@ -58,12 +59,12 @@ class _GraphptState extends State<Graphpt> {
   @override
   void initState() {
     super.initState();
-    dataMap.putIfAbsent(widget.subject1, () => double.parse(widget.mark1));
-    dataMap.putIfAbsent(widget.subject2, () => double.parse(widget.mark2));
-    dataMap.putIfAbsent(widget.subject3, () => double.parse(widget.mark3));
-    dataMap.putIfAbsent(widget.subject4, () => double.parse(widget.mark4));
-    dataMap.putIfAbsent(widget.subject5, () => double.parse(widget.mark5));
-    dataMap.putIfAbsent(widget.subject6, () => double.parse(widget.mark6));
+    dataMap.putIfAbsent(widget.subject1, () => double.parse(widget.m1));
+    dataMap.putIfAbsent(widget.subject2, () => double.parse(widget.m2));
+    dataMap.putIfAbsent(widget.subject3, () => double.parse(widget.m3));
+    dataMap.putIfAbsent(widget.subject4, () => double.parse(widget.m4));
+    dataMap.putIfAbsent(widget.subject5, () => double.parse(widget.m5));
+    dataMap.putIfAbsent(widget.subject6, () => double.parse(widget.m6));
   }
 
   @override
@@ -115,7 +116,13 @@ class _GraphptState extends State<Graphpt> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => InterestPage(
-                                        
+                                        language1: widget.m1,
+                                  language2: widget.m2,
+                                  math: widget.m3,
+                                  science: widget.m4,
+                                  social: widget.m5,
+                                  subject6:widget.m6,
+                                  grouptype:widget.gt
                                         )));
                           },
                            iconSize: 48.0, color: Colors.black),
