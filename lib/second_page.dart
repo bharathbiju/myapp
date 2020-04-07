@@ -24,12 +24,12 @@ class second_page extends StatelessWidget {
               child: new Text('G1'),
               onPressed: () {
                 var GroupType='1';
-                var subject1='computer';
-                var subject2='English';
-                var subject3='English';
-                var subject4='English';
-                var subject5='English';
-                var subject6='English';
+                var subject1='Language 1';
+                var subject2='Language 2';
+                var subject3='Physics';
+                var subject4='Chemistry';
+                var subject5='Maths';
+                var subject6='Biology';
                 Navigator.push(context,
 
                     MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
@@ -41,12 +41,12 @@ class second_page extends StatelessWidget {
               child: new Text('G2'),
               onPressed: () {
                 var GroupType='2';
-                 var subject1='bio';
-                var subject2='English';
-                var subject3='English';
-                var subject4='English';
-                var subject5='English';
-                var subject6='English';
+                 var subject1='Language 1';
+                var subject2='Language 2';
+                var subject3='Compuer Science';
+                var subject4='Physics';
+                var subject5='Chemistry';
+                var subject6='Maths';
                       Navigator.push(context,
                     MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
                     subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
@@ -54,12 +54,12 @@ class second_page extends StatelessWidget {
             ),
             new RaisedButton(child: new Text('G3'), onPressed: () {
               var GroupType='3';
-               var subject1='Eco';
-                var subject2='English';
-                var subject3='English';
-                var subject4='English';
-                var subject5='English';
-                var subject6='English';
+               var subject1='Language 1';
+                var subject2='Language 2';
+                var subject3='Computer Science';
+                var subject4='Economics';
+                var subject5='Commerce';
+                var subject6='Accountancy';
               Navigator.push(context,
                     MaterialPageRoute(builder: ((context) => PlusTwo(GroupType:GroupType,
                     subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
