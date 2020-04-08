@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/defaultHBRC.dart';
 import 'package:myapp/interest.dart';
 import 'package:pie_chart/pie_chart.dart';
 
@@ -95,7 +96,7 @@ class _GraphState extends State<Graph> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => InterestPage(
+                                    builder: (context) => DefaultHBRC(
                                       language1: widget.language1,
                                   language2: widget.language2,
                                   math: widget.math,
