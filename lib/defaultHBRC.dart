@@ -60,7 +60,7 @@ class _DefaultHBRCState extends State<DefaultHBRC> {
         {"name": "Fittness", "code": "BSc Sports science, BA Defence and Strategic Studies",},
          {"name": "Reading", "code": "BA Criminology, BA Psychology, BA Journalism, BA Education"},
             {"name": "Cooking", "code": "BSc Home Science"},
-            {"name": "Coding", "code": "Computer Engineering, Information Technology Engineering, BSc Computer Science, BSc Information Technology"},
+            {"name": "Coding", "code": "Computer Science, Information Technology"},
              {"name": "Chess", "code": "BSc Maths"},
                           
     ],

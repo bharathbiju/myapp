@@ -18,7 +18,7 @@ class second_page extends StatelessWidget {
               .min, // this will take space as minimum as posible(to center)
           children: <Widget>[
             new RaisedButton(
-              child: new Text('G1'),
+              child: new Text('Bio Maths'),
               onPressed: () {
                 var GroupType='1';
                 var subject1='Language 1';
@@ -35,7 +35,7 @@ class second_page extends StatelessWidget {
                     }
             ),
             new RaisedButton(
-              child: new Text('G2'),
+              child: new Text('Computer Math'),
               onPressed: () {
                 var GroupType='2';
                  var subject1='Language 1';
@@ -49,7 +49,7 @@ class second_page extends StatelessWidget {
                     subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
                     },
             ),
-            new RaisedButton(child: new Text('G3'), onPressed: () {
+            new RaisedButton(child: new Text('Economics/Arts'), onPressed: () {
               var GroupType='3';
                var subject1='Language 1';
                 var subject2='Language 2';
