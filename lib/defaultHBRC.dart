@@ -52,10 +52,17 @@ class _DefaultHBRCState extends State<DefaultHBRC> {
                     },
                     errorText: 'Please select one or more option(s)',
                     dataSource: [
-    {"name": "Drawing", "code": "Civil Enginner"},
+    {"name": "Drawing", "code": "Civil Engineer"},
      {"name": "sketching", "code": "Animation Designer"},
-     {"name": "speech", "code": "law"},
-    
+      {"name": "speech", "code": "law"},
+      {"name": "Photography", "code": "BA Photography, BA Cinematography"},
+       {"name": "Gardening", "code": "BA Agro Science"},
+        {"name": "Fittness", "code": "BSc Sports science, BA Defence and Strategic Studies",},
+         {"name": "Reading", "code": "BA Criminology, BA Psychology, BA Journalism, BA Education"},
+            {"name": "Cooking", "code": "BSc Home Science"},
+            {"name": "Coding", "code": "Computer Science, Information Technology"},
+             {"name": "Chess", "code": "BSc Maths"},
+                          
     ],
                     textField: 'name',
                     valueField: 'code',
