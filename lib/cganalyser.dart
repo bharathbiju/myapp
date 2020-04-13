@@ -48,7 +48,7 @@ class _CgAnalyserState extends State<CgAnalyser> {
   Future<List<CgAnalyserList2>> fetchNotes2() async {
     
     var url2 =
-        'https://raw.githubusercontent.com/Samson-Antony/final-project/json_file/for%20loop%20prediction/test.json';
+        'https://raw.githubusercontent.com/Samson-Antony/final-project/master/for%20loop%20prediction/test.json';
     var response2 = await http.get(url2);
     var ingList2 = List<CgAnalyserList2>();
 
