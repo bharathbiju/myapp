@@ -7,6 +7,7 @@ import 'package:myapp/clg_details.dart';
 import 'package:myapp/course_details.dart';
 import 'package:myapp/tenthmark.dart';
 import 'second_page.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -328,12 +329,25 @@ class _RegisterFormState extends State<RegisterForm> {
         MaterialPageRoute(builder: (context) => Ten()),
       );
     }
-    else
+    else if (this.section=='12')
         {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => second_page()),
       );
+    }
+    else
+    {
+      Fluttertoast.showToast(
+        msg: "Please Select a Valid Class (Class refers to the class you are going to study)",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 10,
+        backgroundColor: Colors.blue,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+
     }
   }
 }
