@@ -13,12 +13,15 @@ class second_page extends StatelessWidget {
         elevation: 0.0,
       ),
       body: new Center(
-        child: new ButtonBar(
-          mainAxisSize: MainAxisSize
-              .min, // this will take space as minimum as posible(to center)
+        child: new Column(
+          children: <Widget>[
+          
+            Expanded(flex: 1,
+              child:new ButtonBar(
+          // this will take space as minimum as posible(to center)
           children: <Widget>[
             new RaisedButton(
-              child: new Text('Bio Maths'),
+              child: new Text('Biology'),
               onPressed: () {
                 var GroupType='1';
                 var subject1='Language 1';
@@ -35,7 +38,7 @@ class second_page extends StatelessWidget {
                     }
             ),
             new RaisedButton(
-              child: new Text('Computer Math'),
+              child: new Text('Computer'),
               onPressed: () {
                 var GroupType='2';
                  var subject1='Language 1';
@@ -49,7 +52,7 @@ class second_page extends StatelessWidget {
                     subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,))));
                     },
             ),
-            new RaisedButton(child: new Text('Economics/Arts'), onPressed: () {
+            new RaisedButton(child: new Text('Economics'), onPressed: () {
               var GroupType='3';
                var subject1='Language 1';
                 var subject2='Language 2';
@@ -67,8 +70,11 @@ class second_page extends StatelessWidget {
                     MaterialPageRoute(builder: ((context) => Plustwomark())));
               }),
           ],
-        ),
-      ),
+        ), ),
+         Expanded(child: new Text("Please Select the Course that you had persuade during 10th \n\n> Bio Stream(Chemistry,Biology,Physics etc)\n\n >Computer Stream(Chemistry,Computer,Physics etc) \n\n >Economics Stream(Accounts,Business Studies,Economics etc)")),
+          ],
+        )
+      )
     );
   }
 }
